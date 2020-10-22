@@ -2,26 +2,18 @@
 using namespace std;
 
 
+struct Point
+{
+    double x;
+    double y;
+};
 
 int main()
 {
-    int temp;
-    int numbahs[10]= {7, 3, 9, 2, 5, 1, 5, 20, 8, 4};
-    for (int j=10; j>0; j--)
-    {
-        for (int i=0; i<10; i++)
-            {
-                if (numbahs[i]<numbahs[i+1])
-                {
-                    temp=numbahs[i];
-                    numbahs[i]=numbahs[i+1];
-                    numbahs[i+1]=temp;
-                }
-                cout << numbahs[i];
-            }
-        cout << endl;
-    }
-
-
+    Point mypoint;
+    mypoint.x=2;
+    mypoint.y=3.3;
+    cout<<mypoint.x<<endl;
+    cout<<mypoint.y<<endl;
     return 0;
 }
