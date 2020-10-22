@@ -9,6 +9,10 @@ struct Point
 {
     double x;
     double y;
+    void print()
+    {
+        cout <<"["<<x<<","<<y<<"]"<<endl;
+    }
 };
 float Distance(Point A, Point B)
 {
@@ -26,20 +30,20 @@ Point AssignPoint()
 
 int main()
 {
-    double largdist=0;
+    double largdist=0, distances[90];
     Point Points[10];
     for (int i=0; i<10; i++)
     {
         Points[i]=AssignPoint();
-        cout << Points[i].x<<" "<<Points[i].y<<endl;
+        Points[i].print();
     }
     for (int i=0; i<10; i++)
     {
-
         for (int j=0; j<10; j++)if(j!=i)
         {
             cout<<Distance(Points[i],Points[j])<<endl;
             if (Distance(Points[i],Points[j])>largdist)largdist=Distance(Points[i],Points[j]);
+            for(int n=0;n<90;n++)distances[n]=Distance(Points[i],Points[j]);
         }
     }
     cout <<largdist;
